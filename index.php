@@ -63,7 +63,43 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row my-5">
+
+          <div class="col-md-12">
+
+            <?php 
+              if(isset($_GET['successUpdate'])){ 
+            ?>
+
+            <div class="alert alert-success" role="alert">
+
+              <?php 
+                echo $_GET['successUpdate'];
+              ?>
+
+            </div>
+
+            <?php } ?>
+
+            <?php 
+                if(isset($_GET['errorUpdate'])){
+            ?>
+
+            <div class="alert alert-danger" role="alert">
+
+              <?php
+                  echo $_GET['errorUpdate'];
+               
+              ?>
+
+            </div>
+
+            <?php  } ?>
+
+
+          </div>
+
+
             <div class="col-md-12">
             <table class="table">
                 <thead>
@@ -94,7 +130,7 @@
                             <td> <?= $row['department'] ?></td>
                             <td> 
 
-                                <a href="#" class="btn btn-primary">Edit</a>
+                                <a href="./include/updateInfo.php?id=<?= $row['id']?>" class="btn btn-primary">Edit</a>
                                 <a href="./include/deletePersonalInfo.php?id=<?= $row['id']?>" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
