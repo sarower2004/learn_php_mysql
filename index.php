@@ -81,12 +81,14 @@
 
                 if (mysqli_num_rows($result) > 0) {
                     // output data of each row
+                    $sl = 1;
+
                     while($row = mysqli_fetch_assoc($result)) { 
 
                 ?> 
 
                         <tr>
-                            <th scope="row"> <?= $row['id'] ?> </th>
+                            <th scope="row"> <?= $sl++ ?> </th>
                             <td> <?= $row['name'] ?></td>
                             <td> <?= $row['email'] ?></td>
                             <td> <?= $row['department'] ?></td>
